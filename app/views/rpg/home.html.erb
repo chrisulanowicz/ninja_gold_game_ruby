@@ -1,0 +1,53 @@
+<div id="container">
+	<div id="header">
+		<h2>Your Gold: </h2>
+		<h2 id="counter"><%= @gold %></h2>
+		<a href="/destroy">Start Over</a>
+	</div>
+	<div id="middle">
+		<div class="arena">
+			<h3>Farm</h3>
+			<p>(make 10-20 gold)</p>
+			<form action="/rpg/farm" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+				<input type="submit" value="Earn Gold!" />
+			</form>
+		</div>
+		<div class="arena">
+			<h3>Cave</h3>
+			<p>(make 5-10 gold)</p>
+			<form action="/rpg/cave" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+				<input type="submit" value="Earn Gold!" />
+			</form>
+		</div>
+		<div class="arena">
+			<h3>House</h3>
+			<p>(make 2-5 gold)</p>
+			<form action="/rpg/house" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+				<input type="submit" value="Earn Gold!" />
+			</form>
+		</div>
+		<div class="arena">
+			<h3>Casino</h3>
+			<p>(Win or Lose up to 50 gold)</p>
+			<form action="/rpg/casino" method="post">
+				<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+				<input type="submit" value="Gamble Gold!" />
+			</form>
+		</div>
+	</div>
+	<div id="activities">
+		<h4>Activities:</h4>
+		<div id="log">
+			<% @activities.each do |activity| %>
+				<% if activity.include?('LOSER') %>
+					<p class="red"><%= activity %></p>
+				<% else %>
+					<p class="green"><%= activity %></p>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

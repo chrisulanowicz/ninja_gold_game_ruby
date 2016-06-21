@@ -1,0 +1,52 @@
+// Place all the styles related to the rpg controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#container {
+	padding: 30px;
+	width: 90%;
+}
+#header {
+	width: 75%;
+	margin-left: 200px;
+}
+#header h2 {
+	display: inline-block;
+}
+	#counter {
+		border: 1px solid black;
+		width: 100px;
+		padding: 10px;
+	}
+
+#middle {
+	margin: 10px auto;
+	width: 75%;
+}
+	.arena {
+		display: inline-block;
+		height: 180px;
+		width: 180px;
+		border: 1px solid black;
+		text-align: center;
+		padding: 10px;
+		margin: 5px auto;
+	}
+
+#activities {
+	width: 75%;
+	margin: 10px auto;
+}
+	#log {
+		border: 1px solid black;
+		width: 70%;
+		overflow: scroll;
+		height: 200px;
+	}
+
+	.green {
+		color: green;
+	}
+	.red {
+		color: red;
+	}
